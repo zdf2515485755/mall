@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns:
+              -  "*"
+            allowed-methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowed-headers: "*"
+            allow-credentials: true
+      routes:
+        - id: product_route
+          uri: lb://mall-product
+          predicates:
+            - Path=/category/**
+          filters:
+            - StripPrefix=1
