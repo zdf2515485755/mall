@@ -1,7 +1,10 @@
 package com.zdf.mallproduct.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zdf.internalcommon.entity.PmsBrand;
+import com.zdf.internalcommon.request.GetBrandListRequestDto;
+import com.zdf.internalcommon.result.ResponseResult;
 
 /**
 * @author mrzhang
@@ -9,5 +12,5 @@ import com.zdf.internalcommon.entity.PmsBrand;
 * @createDate 2024-06-24 11:38:40
 */
 public interface PmsBrandService extends IService<PmsBrand> {
-
+    ResponseResult<IPage<PmsBrand>> getBrandList(GetBrandListRequestDto getBrandListRequestDto);
 }

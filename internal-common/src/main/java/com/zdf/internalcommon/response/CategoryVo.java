@@ -14,8 +14,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryResponseDto {
+public class CategoryVo {
     private Long id;
     private String name;
-    private List<CategoryResponseDto> categoryResponseDtoList;
+    private List<CategoryVo> categoryResponseDtoList;
 }

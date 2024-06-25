@@ -3,6 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zdf.mallproduct.mapper.PmsCategoryBrandRelationMapper">
+   <resultMap id="BrandAndCategoryResultMap" type="com.zdf.internalcommon.response.BrandAndCategroyRelationVo" autoMapping="true" />
 
-
+    <select id="getRelation" resultMap="BrandAndCategoryResultMap">
+        select
+            cb.brand_id, cb.brand_name, pc.name categoryName
+            from pms_category_brand_relation cb left join pms_category pc
+            on cb.catelog_id = pc.cat_id
+        where cb.brand_id = #{id}
+    </select>
 </mapper>
