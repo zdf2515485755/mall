@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class VerificationCodeResponseDto {
+public class VerificationCodeVo {
     private String uuid;
     private String image;
 }
